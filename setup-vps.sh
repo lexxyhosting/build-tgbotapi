@@ -103,9 +103,9 @@ source .env
 
 echo "Starting Telegram Bot API Server on port $BOT_API_PORT..."
 ./tgbotapi/telegram-bot-api \
-    --api_id=$TBA_API_ID \
-    --api_hash=$TBA_API_HASH \
-    --http_port=$BOT_API_PORT \
+    --api-id=$TBA_API_ID \
+    --api-hash=$TBA_API_HASH \
+    --http-port=$BOT_API_PORT \
     --local \
     --dir=./data/tgfiles \
     --verbosity=1 \
