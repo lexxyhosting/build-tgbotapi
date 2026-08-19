@@ -1,0 +1,27 @@
+name: Build Telegram Bot API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake libssl-dev zlib1g-dev
+
+      - name: Clone telegram-bot-api
+        run: git clone --depth 1 https://github.com/tdlib/telegram-bot-api.git
+
+      - name: Build
+        run: |
+          cd telegram-bot-api
+          mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Release ..
+          make -j$(nproc)
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: telegram-bot-api
+          path: telegram-bot-api/build/telegram-bot-api
