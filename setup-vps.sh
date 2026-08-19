@@ -106,6 +106,7 @@ echo "Starting Telegram Bot API Server on port $BOT_API_PORT..."
     --api-id=$TBA_API_ID \
     --api-hash=$TBA_API_HASH \
     --http-port=$BOT_API_PORT \
+    --local \
     --dir=/opt/tgbotapi/data/tgfiles \
     --verbosity=1 \
     >> /opt/tgbotapi/logs/tba.log 2>&1 &
