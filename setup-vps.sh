@@ -25,7 +25,7 @@ CF_BIN="/usr/local/bin/cloudflared"
 # ===== Install dependencies =====
 echo "[1/5] Installing dependencies..."
 apt-get update -qq
-apt-get install -y -qq build-essential cmake g++ git libssl-dev zlib1g-dev curl
+apt-get install -y -qq build-essential cmake g++ git libssl-dev zlib1g-dev curl gperf
 
 # ===== Install cloudflared =====
 echo ""
